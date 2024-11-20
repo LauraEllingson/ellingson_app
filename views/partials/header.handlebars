@@ -1,11 +1,15 @@
 <header>
   <a class="site-logo" href="/">
     Auth Example! 🕵️
-  </a>
-  {{#if isLoggedIn}}
-    <a href="/api/logout">Logout</a>
-  {{else}}
-    <a href="/login">Login</a>
-    <a href="/signup">Sign Up</a>
-  {{/if}}
+  <nav>
+    <a href="/">Home</a>
+    <a href="/recipes">All Recipes</a>
+    <a href="/protected">Submit a Recipe</a>
+    {{#if isLoggedIn}}
+      <a href="/logout">Logout</a>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
 </header>

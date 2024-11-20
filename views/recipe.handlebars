@@ -1,0 +1,17 @@
+{{> header}}
+<main>
+  <h1>{{recipe.name}}</h1>
+  <p><strong>Ingredients:</strong></p>
+  <ul>
+    {{#each recipe.ingredients}}
+      <li>{{this.name}} - {{this.quantity}}</li>
+    {{/each}}
+  </ul>
+  <p><strong>Instructions:</strong> {{recipe.instructions}}</p>
+  <p><strong>Cooking Time:</strong> {{recipe.cookingTime}} minutes</p>
+  <p><strong>Servings:</strong> {{recipe.servings}}</p>
+  {{#if recipe.image}}
+    <img src="{{recipe.image}}" alt="{{recipe.name}}" class="recipe-image">
+  {{/if}}
+  <a href="/recipes">Back to all recipes</a>
+</main>

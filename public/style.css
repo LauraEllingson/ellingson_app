@@ -125,6 +125,48 @@ header .site-logo {
   padding: calc(var(--space) * 0.5) calc(var(--space) * 1);
 }
 
+/* Form-specific styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  padding: calc(var(--space) * 2);
+  background-color: var(--dark-grey);
+}
+
+form label {
+  font-size: calc(var(--font-size) * 1.1);
+  color: var(--light-grey);
+  text-align: left;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: calc(var(--space) * 0.5);
+  font-size: var(--font-size);
+  color: var(--text-color);
+  background-color: var(--primary-dark);
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--secondary);
+  outline: none;
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form button {
+  align-self: center;
+}
+
+
 @media screen and (max-width: 700px) {
   .site-logo {
     font-size: calc(var(--font-size) * 1.25);

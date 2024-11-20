@@ -1,0 +1,27 @@
+{{> header}}
+<main>
+  <h1>All Recipes</h1>
+  {{#if recipes.length}}
+    <ul class="recipe-list">
+      {{#each recipes}}
+        <li class="recipe-item">
+          <h2>{{this.name}}</h2>
+          <p><strong>Ingredients:</strong></p>
+          <ul>
+            {{#each this.ingredients}}
+              <li>{{this.name}} - {{this.quantity}}</li>
+            {{/each}}
+          </ul>
+          <p><strong>Instructions:</strong> {{this.instructions}}</p>
+          <p><strong>Cooking Time:</strong> {{this.cookingTime}} minutes</p>
+          <p><strong>Servings:</strong> {{this.servings}}</p>
+          {{#if this.image}}
+            <img src="{{this.image}}" alt="{{this.name}}" class="recipe-image">
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No recipes available. Be the first to add one!</p>
+  {{/if}}
+</main>
