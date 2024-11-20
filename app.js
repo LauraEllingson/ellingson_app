@@ -5,7 +5,7 @@ const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const { MONGODB_URI } = require("./config/connection");
 const apiRoutes = require("./routes/apiRoutes");
-const recipeRoutes = require('./routes/recipeRoute');
+const recipeRoutes = require('./routes/recipeRoutes');
 const htmlRoutes = require("./routes/htmlRoutes");
 const app = express();
 
@@ -39,7 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 
-app.use("/api", apiRoutes, recipeRoutes);
+app.use("/api", apiRoutes, recipeRoute);
 app.use("/", htmlRoutes);
 
 module.exports = app;
